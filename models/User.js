@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const crypto = require('crypto');
+const { time } = require('console');
 
 
 const UserSchema = new mongoose.Schema({
@@ -33,7 +34,7 @@ const UserSchema = new mongoose.Schema({
         required: [true, 'Please provide password'],
         minlength: 5
     }
-})
+},{timestamps: true})
 
 // UserSchema.pre('save', async function() {
 //     const salt = await bcrypt.genSalt(10)
